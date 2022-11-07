@@ -59,17 +59,43 @@ export default function RecipeList({ recipes }) {
 
       <div>
         <h1 className="text-3xl">recipe list</h1>
-        <ul className="flex flex-col gap-4">
+        <ul
+          role="list"
+          className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+        >
           {filteredRecipes.map((r) => (
-            <li className="bg-gray-600 rounded flex gap-2">
-              <Image
-                src="https://picsum.photos/200"
-                // src={r.recipe.images.REGULAR.url}
-                alt={r.recipe.label}
-                width={300}
-                height={300}
-              />
-              <h2 className="text-2xl">{r.recipe.label}</h2>
+            <li
+              key={r.recipe.uri}
+              className="relative"
+            >
+              <div className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+                <Image
+                  src="https://picsum.photos/200"
+                  // src={r.recipe.images.REGULAR.url}
+                  alt={r.recipe.label}
+                  width={300}
+                  height={300}
+                  className="pointer-events-none object-cover group-hover:opacity-75"
+                />
+                <input
+                  type="checkbox"
+                  className="absolute right-2 top-2 h-6 w-6 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                />
+                <button
+                  type="button"
+                  className="absolute inset-0 focus:outline-none"
+                >
+                  <span className="sr-only">
+                    View details for {r.recipe.label}
+                  </span>
+                </button>
+                <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">
+                  {r.recipe.label}
+                </p>
+                <p className="pointer-events-none block text-sm font-medium text-gray-900">
+                  {r.recipe.totalTime}
+                </p>
+              </div>
             </li>
           ))}
         </ul>
