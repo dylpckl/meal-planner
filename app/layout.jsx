@@ -2,7 +2,9 @@ import Link from "next/link";
 import "./globals.css";
 import DndContextProvider from "./dnd-context";
 
+
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       {/*

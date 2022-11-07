@@ -4,6 +4,8 @@ import { DndContext } from "@dnd-kit/core";
 import { Draggable } from "./Draggable";
 import { Droppable } from "./Droppable";
 import Image from "next/image";
+import { cuisineTypes, mealTypes } from "./(lib)/constants";
+import Dropdown from "./Dropdown";
 // import data from "./recipes.json";
 
 export default function RecipeList({ recipes }) {
@@ -55,6 +57,7 @@ export default function RecipeList({ recipes }) {
         </form>
 
         <button onClick={() => handleClear()}>clear</button>
+        <Dropdown options={cuisineTypes} />
       </div>
 
       <div>
@@ -79,11 +82,11 @@ export default function RecipeList({ recipes }) {
                 />
                 <input
                   type="checkbox"
-                  className="absolute right-2 top-2 h-6 w-6 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="absolute right-2 top-2 h-6 w-6 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 z-20"
                 />
                 <button
                   type="button"
-                  className="absolute inset-0 focus:outline-none"
+                  className="absolute inset-0 focus:outline-none z-10"
                 >
                   <span className="sr-only">
                     View details for {r.recipe.label}

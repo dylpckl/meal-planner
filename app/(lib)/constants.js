@@ -1,0 +1,30 @@
+export const mealTypes = [
+    'breakfast',
+    'brunch',
+    'lunch/dinner',
+    'snack',
+    'teatime',
+]
+
+export const cuisineTypes = [
+    'american',
+    'asian',
+    'british',
+    'caribbean',
+    'central europe',
+    'eastern europe',
+    'french',
+    'greek',
+    'indian',
+    'italian',
+    'japanese',
+    'korean',
+    'kosher',
+    'mediterranean',
+    'mexican',
+    'middle eastern',
+    'nordic',
+    'south american',
+    'south east asian',
+    'world',
+]
