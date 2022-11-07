@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['spoonacular.com', 'edamam-product-images.s3.amazonaws.com'],
+    domains: ['spoonacular.com', 'edamam-product-images.s3.amazonaws.com', 'picsum.photos'],
   }
 }
 
